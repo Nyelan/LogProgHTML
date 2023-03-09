@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- doctype informa ao agente de usuário a versão do html que deve ser 
+renderizada-->
+<html lang="pt-br">
+<head>
+    <title>Lógica de Programação</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Leonardo">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+    
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <button onclick="iniciarCalculo()">Novo cálculo</button>
+
+    <script>
+        
+        var n1 = parseFloat(prompt("Altura: "));
+        var n2 = parseFloat(prompt("Largura: "));
+
+        try{
+            print(calcular(n1, n2));
+        }
+        catch(e){
+            alert(e);
+            print(0);
+        }
+        
+        function iniciarCalculo(){
+            var num1 = parseFloat(prompt("Altura: "));
+            var num2 = parseFloat(prompt("Largura: "));
+            try{
+            area = calcular(num1, num2);
+            }
+            catch(e){
+                alert(e);
+                return print(0);
+            }
+            print(area);
+            
+        }
+
+        function print(res){
+            var output = document.querySelector("#output").innerHTML = res;
+        }
+
+        function calcular(num1, num2){
+            if(num1 == undefined || num2 == undefined){
+                throw new Error("Precisa receber dois números.");
+            }
+
+            if(isNaN(num1) || isNaN(num2)){
+                throw new Error("Somente números.");
+            }
+            return num1 * num2;
+        }
+
+    </script>
+
+</body>
+</html>

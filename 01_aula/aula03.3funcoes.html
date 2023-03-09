@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- doctype informa ao agente de usuário a versão do html que deve ser 
+renderizada-->
+<html lang="pt-br">
+<head>
+    <title>Lógica de Programação</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Leonardo">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+    
+</head>
+
+<body>
+
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <button onclick="mostrarAreaAlert()">Mostrar área no Alert</button>
+    <button onclick="mostrarAreaOutput()">Mostrar área no Output</button>
+
+    <div id="output"></div>
+
+    <script>
+        
+        function mostrarAreaAlert(){
+
+            var largura = parseFloat(prompt("Digite a largura: "));
+            var altura = parseFloat(prompt("Digite a altura: "));
+
+            var area = calcularArea(largura, altura);
+
+            alert("Área total é: " + area);
+
+        }
+
+        function mostrarAreaOutput(){
+
+            var largura = parseFloat(prompt("Digite a largura: "));
+            var altura = parseFloat(prompt("Digite a altura: "));
+
+            var area = calcularArea(largura, altura);
+
+            document.querySelector("#output").innerHTML = 
+            "Área total é: " + area;
+
+        }
+
+        function calcularArea(l, a){
+            return l * a;
+        }
+        
+    </script>
+
+</body>
+</html>
